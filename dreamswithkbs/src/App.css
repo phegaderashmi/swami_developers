@@ -1,0 +1,313 @@
+/* ------------------------- */
+/* RESET                    */
+/* ------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ------------------------- */
+/* NAVBAR                    */
+/* ------------------------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 40px;
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  height: 55px;
+}
+
+.logo {
+  height: 250px;
+  width: 250px;
+ 
+}
+
+/* Navbar Menu */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar links */
+.navbar ul li a {
+  color: white;                   /* common white color */
+  text-decoration: none;          /* remove underline */
+  font-weight: 100;               /* medium-bold weight */
+  font-family: "'Roboto', Arial, sans-serif";  /* font family */
+  font-size: 20px;                /* font size */
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #f1c40f;                 /* hover color */
+}
+
+/* ------------------------- */
+/* BACKGROUND + OVERLAY      */
+/* ------------------------- */
+.app {
+  background: url("./assets/home.jpg") no-repeat center center/cover;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* ------------------------- */
+/* HERO SECTION + FORM       */
+/* ------------------------- */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px;
+  height: 100vh;
+  color: white;
+  position: relative;
+}
+
+.hero-text {
+  max-width: 600px;
+  text-align: left;
+ 
+}
+
+.hero-text h1 {
+  font-size: 3.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.hero-btn {
+  background-color: #f1c40f;
+  color: #000;
+  font-weight: bold;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.hero-btn:hover {
+  background-color: #e0b90f;
+}
+
+/* ------------------------- */
+/* SOCIAL ICONS              */
+/* ------------------------- */
+.social-icons {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  color: #ccc;
+}
+
+.social-icons a {
+  color: white; /* 👈 Default icon color */
+  text-decoration: none; /* underline hata dega */
+}
+
+.social-icons a:visited {
+  color: white; /* 👈 visited hone ke baad bhi same color */
+}
+
+.social-icons a:hover {
+  color: #f1c40f; /* 👈 hover pe yellow shade */
+}
+
+
+.social-icons svg {
+  font-size: 30px;
+  cursor: pointer;
+  transition: color 0.3s;
+} /* apply on natural behaviour*/
+
+.social-icons svg:hover {
+  color: #f1c40f;
+}
+
+/* ------------------------- */
+/* CUSTOMER FORM STYLING     */
+/* ------------------------- */
+.customer-form {
+  background: rgba(255, 255, 255, 0.95);
+  color: #000;
+  padding: 25px 30px;
+  border-radius: 12px;
+  width: 350px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  animation: fadeIn 1s ease;
+}
+
+.customer-form h2 {
+  margin-bottom: 15px;
+  text-align: center;
+  color: #333;
+}
+
+.customer-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.customer-form input,
+.customer-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;      /* same font size */
+  font-family: inherit; /* inherit parent font */
+  line-height: 1.5;     /* same spacing as input */
+  resize: none;          /* optional, remove textarea resize */
+}
+
+
+.form-btn {
+  background-color: #f1c40f;
+  color: #000;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-btn:hover {
+  background-color: #e0b90f;
+}
+
+/* ------------------------- */
+/* ANIMATION                 */
+/* ------------------------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ------------------------- */
+/* RESPONSIVE DESIGN         */
+/* ------------------------- */
+
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 20px;
+  }
+
+  .customer-form {
+    width: 90%;
+    margin-top: -300px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Navbar responsive */
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px 20px; /* 👈 yaha padding kam kar di */
+    height: 80px; 
+  }
+
+  /* Hamburger menu visible only on mobile */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    /* transition: 0.3s; */
+  }
+
+  /* Navbar ul hidden by default on mobile */
+  .navbar ul {
+    display: none;
+    position: absolute;
+    top: 60px; /* 👈 navbar ke niche dropdown banega */
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 0;
+    text-align: center;
+ 
+  }
+
+  /* Show navbar when active */
+  .navbar ul.active {
+    display: flex;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .customer-form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+
+  /* Hamburger bars thoda chhote kar sakte ho */
+  .bar {
+    width: 20px;
+    height: 3px;
+  }
+}
